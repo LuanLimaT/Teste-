@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria - Filtros</title>
+    <!-- Link para o arquivo JS externo -->
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+<h1>Livraria</h1>
+
+<!-- Filtros -->
+<label for="searchTitle">Buscar por título:</label>
+<input type="text" id="searchTitle" onkeyup="filterBooks()" placeholder="Buscar por título...">
+
+<label for="searchAuthor">Buscar por autor:</label>
+<input type="text" id="searchAuthor" onkeyup="filterBooks()" placeholder="Buscar por autor...">
+
+<label for="searchYear">Filtrar por ano:</label>
+<input type="number" id="searchYear" oninput="filterBooks()" placeholder="Ano...">
+
+<select id="yearComparison" onchange="filterBooks()">
+    <option value="equals">Igual</option>
+    <option value="greater">Maior que</option>
+    <option value="less">Menor que</option>
+</select>
+
+<table id="bookTable" border="1">
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Ano</th>
+    </tr>
+    </thead>
+    <tbody id="bookList">
+    <!-- Os dados do XML serão carregados aqui -->
+    </tbody>
+</table>
+
+</body>
+</html>
